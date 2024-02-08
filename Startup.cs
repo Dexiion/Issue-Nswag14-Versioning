@@ -31,9 +31,9 @@ public class Startup {
         if (env.IsDevelopment())
         {
             app.UseOpenApi();
-            app.UseSwaggerUi(settings => {
+            app.UseSwaggerUi3(settings => {
                 foreach (var description in provider.ApiVersionDescriptions.Reverse()) {
-                    settings.SwaggerRoutes.Add(new SwaggerUiRoute(description.GroupName.ToUpperInvariant(),
+                    settings.SwaggerRoutes.Add(new SwaggerUi3Route(description.GroupName.ToUpperInvariant(),
                         $"/swagger/{description.GroupName}/swagger.json"));
                 }
             });
